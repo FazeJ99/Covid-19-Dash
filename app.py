@@ -13,6 +13,7 @@ server = app.server
 #---------------------------------------------------------------
 
 df = pd.read_excel("dataset/coviddata.xlsx")
+#df = pd.read_excel("https://github.com/FazeJ99/Covid-19-Dash/blob/main/dataset/coviddata.xlsx")
 
 dff = df.groupby('countriesAndTerritories', as_index=False)[['deaths','cases']].sum()
 print (dff[:5])
