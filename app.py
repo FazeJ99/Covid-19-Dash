@@ -123,7 +123,7 @@ def update_data(chosen_rows,piedropval,linedropval):
     #because original df has all the complete dates
     df_line = df[df['countriesAndTerritories'].isin(list_chosen_countries)]
 
-    line_chart = px.line(
+    line_chart = px.area(
             data_frame=df_line,
             x='dateRep',
             y=linedropval,
