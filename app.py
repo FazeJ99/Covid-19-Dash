@@ -12,7 +12,7 @@ app = dash.Dash(__name__)
 server = app.server
 #---------------------------------------------------------------
 df = pd.read_excel("dataset\coviddata.xlsx")
-#df = pd.read_excel("https://github.com/FazeJ99/Covid-19-Dash/blob/main/dataset/coviddata.xlsx")
+#df = pd.read_excel("https://github.com/FazeJ99/Covid-19-Dash/tree/main/dataset")
 
 dff = df.groupby('countriesAndTerritories', as_index=False)[['deaths','cases']].sum()
 print (dff[:5])
@@ -112,7 +112,8 @@ def update_data(chosen_rows,piedropval,linedropval):
             names='countriesAndTerritories',
             values=piedropval,
             hole=.3,
-            labels={'countriesAndTerritories':'Countries'}
+            labels={'countriesAndTerritories':'Countries'},
+            title='Pie Chart of Country Cases',
             )
 
 
@@ -128,6 +129,7 @@ def update_data(chosen_rows,piedropval,linedropval):
             y=linedropval,
             color='countriesAndTerritories',
             labels={'countriesAndTerritories':'Countries', 'dateRep':'date'},
+            title='Area Chart of Date against the country'
             )
     line_chart.update_layout(uirevision='foo')
 
