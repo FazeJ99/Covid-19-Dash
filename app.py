@@ -11,14 +11,13 @@ from dash.dependencies import Input, Output
 app = dash.Dash(__name__)
 server = app.server
 #---------------------------------------------------------------
-
-df = pd.read_excel("dataset/coviddata.xlsx")
+df = pd.read_excel("dataset\coviddata.xlsx")
 #df = pd.read_excel("https://github.com/FazeJ99/Covid-19-Dash/blob/main/dataset/coviddata.xlsx")
 
 dff = df.groupby('countriesAndTerritories', as_index=False)[['deaths','cases']].sum()
 print (dff[:5])
 #---------------------------------------------------------------
-app.layout = html.Div([
+app.layout = html.Div( [html.H1("Covid-19 Analysis Dashboard", style={'text-align': 'center'}),
     html.Div([
         dash_table.DataTable(
             id='datatable_id',
