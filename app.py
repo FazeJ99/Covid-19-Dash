@@ -78,28 +78,18 @@ app.layout = html.Div([
         ],className='six columns'),
 
     ],className='row'),
-
-    html.Div([
-        html.Div([
-            dcc.Graph(id='linechart'),
-        ],className='six columns'),
-
-        html.Div([
-            dcc.Graph(id='piechart'),
-        ],className='six columns'),
-
-    ],className='row'),
-
+    
      # Line and Bar Plots displayed side by side
      html.Div([
         html.Div([
             dcc.Graph(id='linechart', figure={})
-        ], style={'width': '49%', 'display': 'inline-block'}),
+        ], style={'width': '49%', 'display': 'inline-block'},className='sixcolumns'),
 
         html.Div([
             dcc.Graph(id='piechart', figure={})
-        ], style={'width': '49%', 'display': 'inline-block'})
+        ], style={'width': '49%', 'display': 'inline-block'} , className='sixcolumns')
     ]),
+
 ])
 
 #------------------------------------------------------------------
