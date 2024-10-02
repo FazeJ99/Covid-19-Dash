@@ -12,7 +12,7 @@ app = dash.Dash(__name__)
 
 #---------------------------------------------------------------
 
-df = pd.read_excel("data/coviddata.xlsx")
+df = pd.read_excel("dataset/coviddata.xlsx")
 
 dff = df.groupby('countriesAndTerritories', as_index=False)[['deaths','cases']].sum()
 print (dff[:5])
