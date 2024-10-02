@@ -90,7 +90,16 @@ app.layout = html.Div([
 
     ],className='row'),
 
+     # Line and Bar Plots displayed side by side
+     html.Div([
+        html.Div([
+            dcc.Graph(id='linechart', figure={})
+        ], style={'width': '49%', 'display': 'inline-block'}),
 
+        html.Div([
+            dcc.Graph(id='piechart', figure={})
+        ], style={'width': '49%', 'display': 'inline-block'})
+    ]),
 ])
 
 #------------------------------------------------------------------
