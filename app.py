@@ -9,7 +9,7 @@ from dash import html
 from dash.dependencies import Input, Output
 
 app = dash.Dash(__name__)
-
+server = app.server
 #---------------------------------------------------------------
 
 df = pd.read_excel("dataset/coviddata.xlsx")
