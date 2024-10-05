@@ -11,8 +11,8 @@ from dash.dependencies import Input, Output
 app = dash.Dash(__name__)
 server = app.server
 #---------------------------------------------------------------
-df = pd.read_csv("dataset\coviddata.csv" , encoding = "ISO-8859-1")
-#df = pd.read_excel("https://github.com/FazeJ99/Covid-19-Dash/tree/main/dataset")
+df = pd.read_csv("dataset\coviddata_cleaned.csv")
+#df = pd.read_csv("https://github.com/FazeJ99/Covid-19-Dash/blob/main/dataset/coviddata.csv")
 
 dff = df.groupby('countriesAndTerritories', as_index=False)[['deaths','cases']].sum()
 print (dff[:5])
